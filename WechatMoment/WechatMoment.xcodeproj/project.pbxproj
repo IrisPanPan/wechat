@@ -32,9 +32,7 @@
 		B8ABB9862195E0EC0059F8D0 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ABB9852195E0EC0059F8D0 /* NSString+Extension.m */; };
 		B8ABB988219684750059F8D0 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8ABB987219684750059F8D0 /* CoreFoundation.framework */; };
 		B8ABB98C219684F30059F8D0 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ABB98B219684F30059F8D0 /* Util.m */; };
-		B8D186E12196CDCD00281435 /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D186E02196CDCD00281435 /* LaunchViewController.m */; };
 		B8D186E42196DAD400281435 /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D186E32196DAD400281435 /* ProfileTableViewCell.m */; };
-		B8D186E82196EA2A00281435 /* WeChatMomentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D186E72196EA2A00281435 /* WeChatMomentViewModel.m */; };
 		B8D1870421981EA500281435 /* BaseContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D1870221981EA400281435 /* BaseContentTableViewCell.m */; };
 		B8D1870721981EBE00281435 /* ImgTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D1870621981EBE00281435 /* ImgTableViewCell.m */; };
 		B8D1870A21981EF000281435 /* TextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D1870921981EF000281435 /* TextTableViewCell.m */; };
@@ -119,12 +117,8 @@
 		B8ABB989219684B00059F8D0 /* pchFile.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pchFile.pch; sourceTree = SOURCE_ROOT; };
 		B8ABB98A219684F30059F8D0 /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		B8ABB98B219684F30059F8D0 /* Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
-		B8D186DF2196CDCD00281435 /* LaunchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
-		B8D186E02196CDCD00281435 /* LaunchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
 		B8D186E22196DAD400281435 /* ProfileTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewCell.h; sourceTree = "<group>"; };
 		B8D186E32196DAD400281435 /* ProfileTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewCell.m; sourceTree = "<group>"; };
-		B8D186E62196EA2A00281435 /* WeChatMomentViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeChatMomentViewModel.h; sourceTree = "<group>"; };
-		B8D186E72196EA2A00281435 /* WeChatMomentViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeChatMomentViewModel.m; sourceTree = "<group>"; };
 		B8D1870221981EA400281435 /* BaseContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseContentTableViewCell.m; sourceTree = "<group>"; };
 		B8D1870321981EA400281435 /* BaseContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseContentTableViewCell.h; sourceTree = "<group>"; };
 		B8D1870521981EBE00281435 /* ImgTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImgTableViewCell.h; sourceTree = "<group>"; };
@@ -229,7 +223,6 @@
 		B8526F6621946E8D00872848 /* WechatMoment */ = {
 			isa = PBXGroup;
 			children = (
-				B8D186E52196E97D00281435 /* viewmodel */,
 				B8ABB989219684B00059F8D0 /* pchFile.pch */,
 				B8526FA821948CFE00872848 /* util */,
 				B8526F9B219476C200872848 /* controller */,
@@ -296,8 +289,6 @@
 				B806978F2196AE7B000F99F7 /* NavigationController.m */,
 				B80697912196AEDA000F99F7 /* WechatMomentViewController.h */,
 				B80697922196AEDA000F99F7 /* WechatMomentViewController.m */,
-				B8D186DF2196CDCD00281435 /* LaunchViewController.h */,
-				B8D186E02196CDCD00281435 /* LaunchViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -351,15 +342,6 @@
 				FB713E5CAB415D447F6FB571 /* libPods-WechatMoment.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B8D186E52196E97D00281435 /* viewmodel */ = {
-			isa = PBXGroup;
-			children = (
-				B8D186E62196EA2A00281435 /* WeChatMomentViewModel.h */,
-				B8D186E72196EA2A00281435 /* WeChatMomentViewModel.m */,
-			);
-			path = viewmodel;
 			sourceTree = "<group>";
 		};
 		B8D1870121981EA400281435 /* tweetcell */ = {
@@ -575,7 +557,6 @@
 				B8D1870D21981F1F00281435 /* TextImgTableViewCell.m in Sources */,
 				B806978D2196AE22000F99F7 /* WechatMomentView.m in Sources */,
 				B8D1871021981F5300281435 /* ImgCommTableCiewCell.m in Sources */,
-				B8D186E82196EA2A00281435 /* WeChatMomentViewModel.m in Sources */,
 				B8526F9E219476DF00872848 /* User.m in Sources */,
 				B80697902196AE7B000F99F7 /* NavigationController.m in Sources */,
 				B8526FB32194907900872848 /* ImageDownloader.m in Sources */,
@@ -595,7 +576,6 @@
 				B80697932196AEDA000F99F7 /* WechatMomentViewController.m in Sources */,
 				B8D1870721981EBE00281435 /* ImgTableViewCell.m in Sources */,
 				B8D186E42196DAD400281435 /* ProfileTableViewCell.m in Sources */,
-				B8D186E12196CDCD00281435 /* LaunchViewController.m in Sources */,
 				B8D1871621981F8700281435 /* AllTableViewCell.m in Sources */,
 				B8ABB9862195E0EC0059F8D0 /* NSString+Extension.m in Sources */,
 				B8D1871C21982AC200281435 /* ImageCollectionView.m in Sources */,

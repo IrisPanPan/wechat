@@ -59,8 +59,29 @@
     self.curViewController.automaticallyAdjustsScrollViewInsets = NO;
     [self initView];
      _pageIndex = 0;
-    [self downLoadUserInfo];
-    [self downloadTweetsList];
+    
+    [WeChatMgr downLoadUserInfoCallback:^(id  _Nonnull result) {
+        NSMutableDictionary *resultDic = result;
+        if(resultDic){
+            self.user.userName = [resultDic objectForKey:@"username"];
+            self.user.nick = [resultDic objectForKey:@"nick"];
+            self.user.avatar = [resultDic objectForKey:@"avatar"];
+            self.user.profileImage = [resultDic objectForKey:@"profile-image"];
+            
+            NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
+            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+            
+        }
+    }];
+  
+    [WeChatMgr downloadTweetsListCallback:^(id  _Nonnull result) {
+        NSMutableArray *resultAry = result;
+        if(resultAry){
+            self.allTwList = [self parse2TwContentList:resultAry];
+            [self getTwList];
+            [self.tableView reloadData];
+        }
+    }];
    
 }
 
@@ -242,39 +263,6 @@
 
 
 
-/**
- 下载个人信息
- */
--(void)downLoadUserInfo{
-    [RequestUtil sendRequestToServer:@"http://thoughtworks-ios.herokuapp.com/user/jsmith" Parameters:nil TimeOut:30 Success:^(id  _Nonnull result) {
-        NSMutableDictionary *resultDic = result;
-        if(resultDic){
-            self.user.userName = [resultDic objectForKey:@"username"];
-            self.user.nick = [resultDic objectForKey:@"nick"];
-            self.user.avatar = [resultDic objectForKey:@"avatar"];
-            self.user.profileImage = [resultDic objectForKey:@"profile-image"];
-          
-            NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
-            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
-       
-        }
-    } Fail:^(NSString * _Nonnull result) {
-        
-    }];
-}
-
--(void)downloadTweetsList{
-    [RequestUtil sendRequestToServer:@"http://thoughtworks-ios.herokuapp.com/user/jsmith/tweets" Parameters:nil TimeOut:30 Success:^(id  _Nonnull result) {
-        NSMutableArray *resultAry = result;
-        if(resultAry){
-            self.allTwList = [self parse2TwContentList:resultAry];
-            [self getTwList];
-            [self.tableView reloadData];
-        }
-    } Fail:^(NSString * _Nonnull result) {
-        
-    }];
-}
 
 
 -(NSMutableArray *)parse2TwContentList:(NSArray *)array{
@@ -396,6 +384,7 @@
     UIGraphicsEndImageContext();
     return theImage;
 }
+
 
 
 -(NSMutableArray *)allTwList{

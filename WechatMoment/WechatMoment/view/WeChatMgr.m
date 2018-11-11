@@ -7,6 +7,7 @@
 //
 
 #import "WeChatMgr.h"
+#import "RequestUtil.h"
 
 @implementation WeChatMgr
 /**
@@ -69,4 +70,32 @@
             break;
     }
 }
+
+
+
+/**
+ 下载微信朋友圈列表
+ */
++(void)downloadTweetsListCallback:(void (^)(id result))callback {
+    [RequestUtil sendRequestToServer:@"http://thoughtworks-ios.herokuapp.com/user/jsmith/tweets" Parameters:nil TimeOut:30 Success:^(id  _Nonnull result) {
+        callback(result);
+    } Fail:^(NSString * _Nonnull result) {
+        
+    }];
+}
+
+
+
+/**
+ 下载个人信息
+ */
++(void)downLoadUserInfoCallback:(void (^)(id result))callback{
+    [RequestUtil sendRequestToServer:@"http://thoughtworks-ios.herokuapp.com/user/jsmith" Parameters:nil TimeOut:30 Success:^(id  _Nonnull result) {
+        callback(result);
+    } Fail:^(NSString * _Nonnull result) {
+        
+    }];
+}
+
+
 @end
