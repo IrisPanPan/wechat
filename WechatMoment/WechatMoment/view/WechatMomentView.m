@@ -24,63 +24,44 @@
 #define CELL_PROFILE @"ProfileTableViewCell"
 #define CELL_CONTENT @"TwContentTableViewCell"
 
-#define LIST_PAGE_SIZE 5
+
 
 @interface WechatMomentView()<UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic,strong) WeChatMgr *weChatMgr;
 
 @property (nonatomic,strong) UITableView *tableView;//朋友圈列表
-@property (nonatomic,strong) NSArray *twList;
-@property (nonatomic,strong) NSMutableArray *allTwList;//所有列表
-@property (nonatomic,strong) User *user;//当前用户
-
 @property (nonatomic,strong) UIBarButtonItem *btnBack;//返回按钮
 @property (nonatomic,strong) UIBarButtonItem *btnCamera;//照相按钮
 @property (nonatomic,assign) CGFloat oldAlpha;
-@property (nonatomic,assign) NSInteger pageIndex;//当前页数
+
+
 @end
 
 
 @implementation WechatMomentView
 
 
-
--(User *)user{
-    if(_user==nil){
-        _user = [User new];
+-(WeChatMgr *)weChatMgr{
+    if(_weChatMgr == nil){
+        _weChatMgr = [WeChatMgr sharedManager];
     }
-    return  _user;
+    return _weChatMgr;
 }
-
 
 
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self setNavTitle:@"朋友圈"];
-    self.curViewController.automaticallyAdjustsScrollViewInsets = NO;
-    [self initView];
-     _pageIndex = 0;
     
-    [WeChatMgr downLoadUserInfoCallback:^(id  _Nonnull result) {
-        NSMutableDictionary *resultDic = result;
-        if(resultDic){
-            self.user.userName = [resultDic objectForKey:@"username"];
-            self.user.nick = [resultDic objectForKey:@"nick"];
-            self.user.avatar = [resultDic objectForKey:@"avatar"];
-            self.user.profileImage = [resultDic objectForKey:@"profile-image"];
-            
-            NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
-            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
-            
-        }
+    [self initView];
+    
+    [self.weChatMgr downLoadUserInfoCallback:^(id  _Nonnull result) {
+        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
+        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
     }];
   
-    [WeChatMgr downloadTweetsListCallback:^(id  _Nonnull result) {
-        NSMutableArray *resultAry = result;
-        if(resultAry){
-            self.allTwList = [self parse2TwContentList:resultAry];
-            [self getTwList];
-            [self.tableView reloadData];
-        }
+    [self.weChatMgr downloadTweetsListCallback:^(id  _Nonnull result) {
+      [self.tableView reloadData];
     }];
    
 }
@@ -116,7 +97,8 @@
 
 
 -(void)initView{
-  
+    self.curViewController.automaticallyAdjustsScrollViewInsets = NO;
+   
     _tableView = [[UITableView alloc] initWithFrame:self.frame style:UITableViewStyleGrouped];
     _tableView.backgroundColor = [UIColor whiteColor];
     _tableView.delegate = self;
@@ -151,8 +133,8 @@
         [weakSelf.tableView.mj_header beginRefreshing];
        
         dispatch_async(dispatch_get_global_queue(0, 0), ^{ // 处理耗时操作在此次添加
-            weakSelf.pageIndex = 0;
-            [weakSelf getTwList];
+            weakSelf.weChatMgr.pageIndex = 0;
+            [weakSelf.weChatMgr getTwList];
             dispatch_async(dispatch_get_main_queue(), ^{ //在主线程刷新UI
                 [weakSelf.tableView reloadData];
                 [weakSelf.tableView.mj_footer setState:MJRefreshStateIdle];
@@ -171,11 +153,11 @@
     MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         __weak __typeof(&*self)weakSelf = self;
         dispatch_async(dispatch_get_global_queue(0, 0), ^{ // 处理耗时操作在此次添加
-            weakSelf.pageIndex = weakSelf.pageIndex+1;
-            [weakSelf getTwList];
+            weakSelf.weChatMgr.pageIndex = weakSelf.weChatMgr.pageIndex+1;
+            [weakSelf.weChatMgr getTwList];
             dispatch_async(dispatch_get_main_queue(), ^{ //在主线程刷新UI
                 [weakSelf.tableView reloadData];
-                if(self.twList.count<self.allTwList.count){
+                if(weakSelf.weChatMgr.twList.count<weakSelf.weChatMgr.allTwList.count){
                    [weakSelf.tableView.mj_footer endRefreshing];
                 }else{
                    [weakSelf.tableView.mj_footer  endRefreshingWithNoMoreData];
@@ -219,7 +201,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1 + self.twList.count;
+    return 1 + self.weChatMgr.twList.count;
 }
 
 
@@ -229,8 +211,8 @@
     if(row==0){//个人资料
         return HEIGHT_BG_PROFILE;
     }else {
-        TwContent *content = [self.twList objectAtIndex:row-1];
-        return [tableView fd_heightForCellWithIdentifier:[WeChatMgr getCellIDStrByCellType:content.cellType] cacheByIndexPath:indexPath configuration:^(id cell) {
+        TwContent *content = [self.weChatMgr.twList objectAtIndex:row-1];
+        return [tableView fd_heightForCellWithIdentifier:[self.weChatMgr getCellIDStrByCellType:content.cellType] cacheByIndexPath:indexPath configuration:^(id cell) {
             BaseContentTableViewCell *newCell = cell;
             newCell.twContent = content;
         }];
@@ -249,10 +231,10 @@
             cell = [[ProfileTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CELL_PROFILE];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.user = self.user;
+        cell.user = self.weChatMgr.user;
         return cell;
     }else{
-        TwContent *content = [self.twList objectAtIndex:(row-1)];
+        TwContent *content = [self.weChatMgr.twList objectAtIndex:(row-1)];
         BaseContentTableViewCell *cell = [[TableViewCellFacotry sharedManager] createCellByType:content.cellType TableView:tableView];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.twContent = content;
@@ -263,52 +245,6 @@
 
 
 
-
-
--(NSMutableArray *)parse2TwContentList:(NSArray *)array{
-    NSMutableArray *list = [NSMutableArray new];
-    if(array==nil){
-        return list;
-    }
-    TwContent *twcontent;
-    for(NSInteger i = 0,len = array.count;i<len;i++){
-        NSDictionary *dic = [array objectAtIndex:i];
-        twcontent = [TwContent new];
-        twcontent.content = [dic objectForKey:@"content"];
-        if([dic objectForKey:@"sender"]){
-            NSDictionary *userDic = [dic objectForKey:@"sender"];
-            User *user = [User new];
-            user.userName = [userDic objectForKey:@"username"];
-            user.nick = [userDic objectForKey:@"nick"];
-            user.avatar = [userDic objectForKey:@"avatar"];
-            twcontent.sender = user;
-        }
-        
-        if([dic objectForKey:@"images"]){
-            NSMutableArray *imglist = [NSMutableArray new];
-            NSArray *imgAry = [dic objectForKey:@"images"];
-            for(NSInteger j = 0,len = imgAry.count;j<len;j++){
-                NSString *url = [[imgAry objectAtIndex:j] objectForKey:@"url"];
-                [imglist addObject:url];
-            }
-            twcontent.imgList = imglist;
-        }
-        
-        if([dic objectForKey:@"comments"]){
-            NSArray *commAry = [dic objectForKey:@"comments"];
-            twcontent.commentList = [self parse2TwContentList:commAry];
-        }
-        
-        if((![dic.allKeys containsObject:@"error"])&&(![dic.allKeys containsObject:@"unknown error"]&&
-                                                      (([dic.allKeys containsObject:@"content"])||([dic.allKeys containsObject:@"images"])))){
-            twcontent.cellType = [WeChatMgr getCellTypeByTwContent:twcontent];
-            [list addObject:twcontent];
-        }
-        
-    }
-    return list;
-        
-}
 
 
 
@@ -386,26 +322,5 @@
 }
 
 
-
--(NSMutableArray *)allTwList{
-    if(_allTwList==nil){
-        _allTwList = [NSMutableArray new];
-    }
-    return _allTwList;
-}
-
-
-/**
- 分页查询
- */
--(void)getTwList{
-    if(self.allTwList.count>(_pageIndex+1)*LIST_PAGE_SIZE){
-        NSArray *tmpList = [self.allTwList subarrayWithRange:NSMakeRange(0, (_pageIndex+1)*LIST_PAGE_SIZE)];
-        self.twList = tmpList;
-    }else{
-        self.twList = [self.allTwList copy];
-    }
-    
-}
 
 @end
