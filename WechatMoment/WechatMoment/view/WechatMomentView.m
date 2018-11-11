@@ -52,7 +52,6 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self setNavTitle:@"朋友圈"];
-    
     [self initView];
     
     [self.weChatMgr downLoadUserInfoCallback:^(id  _Nonnull result) {

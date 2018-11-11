@@ -114,12 +114,16 @@
  */
 -(void)downloadTweetsListCallback:(void (^)(id result))callback {
     [RequestUtil sendRequestToServer:@"http://thoughtworks-ios.herokuapp.com/user/jsmith/tweets" Parameters:nil TimeOut:30 Success:^(id  _Nonnull result) {
-        NSMutableArray *resultAry = result;
-        if(resultAry){
-            self.allTwList = [self parse2TwContentList:resultAry];
-            [self getTwList];
-        }
-        callback(result);
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{ // 处理耗时操作在此次添加
+            NSMutableArray *resultAry = result;
+            if(resultAry){
+                self.allTwList = [self parse2TwContentList:resultAry];
+                [self getTwList];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{ //在主线程刷新UI
+                callback(result);
+            });
+        });
     } Fail:^(NSString * _Nonnull result) {
         
     }];
@@ -179,13 +183,19 @@
  */
 -(void)downLoadUserInfoCallback:(void (^)(id result))callback{
     [RequestUtil sendRequestToServer:@"http://thoughtworks-ios.herokuapp.com/user/jsmith" Parameters:nil TimeOut:30 Success:^(id  _Nonnull result) {
-        NSMutableDictionary *resultDic = result;
-        if(resultDic){
-            self.user.userName = [resultDic objectForKey:@"username"];
-            self.user.nick = [resultDic objectForKey:@"nick"];
-            self.user.avatar = [resultDic objectForKey:@"avatar"];
-            self.user.profileImage = [resultDic objectForKey:@"profile-image"];
-        }
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{ // 处理耗时操作在此次添加
+            NSMutableDictionary *resultDic = result;
+            if(resultDic){
+                self.user.userName = [resultDic objectForKey:@"username"];
+                self.user.nick = [resultDic objectForKey:@"nick"];
+                self.user.avatar = [resultDic objectForKey:@"avatar"];
+                self.user.profileImage = [resultDic objectForKey:@"profile-image"];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{ //在主线程刷新UI
+                callback(result);
+            });
+        });
+        
         callback(result);
     } Fail:^(NSString * _Nonnull result) {
         
