@@ -14,6 +14,18 @@
 		B80697932196AEDA000F99F7 /* WechatMomentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80697922196AEDA000F99F7 /* WechatMomentViewController.m */; };
 		B80697A02196B0F6000F99F7 /* BaseUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = B806979F2196B0F6000F99F7 /* BaseUIView.m */; };
 		B80697A32196B108000F99F7 /* BaseUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80697A22196B108000F99F7 /* BaseUIViewController.m */; };
+		B81DE5EF2198AF0700D7FCB0 /* TextImgTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B81DE5D62198AF0700D7FCB0 /* TextImgTableViewCell.m */; };
+		B81DE5F02198AF0700D7FCB0 /* TextCommTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B81DE5D72198AF0700D7FCB0 /* TextCommTableViewCell.m */; };
+		B81DE5F12198AF0700D7FCB0 /* AllTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B81DE5D92198AF0700D7FCB0 /* AllTableViewCell.m */; };
+		B81DE5F22198AF0700D7FCB0 /* ImgTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B81DE5DC2198AF0700D7FCB0 /* ImgTableViewCell.m */; };
+		B81DE5F32198AF0700D7FCB0 /* TextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B81DE5E02198AF0700D7FCB0 /* TextTableViewCell.m */; };
+		B81DE5F42198AF0700D7FCB0 /* ImgCommTableCiewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B81DE5E12198AF0700D7FCB0 /* ImgCommTableCiewCell.m */; };
+		B81DE5F52198AF0700D7FCB0 /* TableViewCellFacotry.m in Sources */ = {isa = PBXBuildFile; fileRef = B81DE5E32198AF0700D7FCB0 /* TableViewCellFacotry.m */; };
+		B81DE5F62198AF0700D7FCB0 /* BaseContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B81DE5E52198AF0700D7FCB0 /* BaseContentTableViewCell.m */; };
+		B81DE5F72198AF0700D7FCB0 /* CommentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B81DE5E62198AF0700D7FCB0 /* CommentsView.m */; };
+		B81DE5F82198AF0700D7FCB0 /* CommentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B81DE5E72198AF0700D7FCB0 /* CommentsTableViewCell.m */; };
+		B81DE5F92198AF0700D7FCB0 /* ImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B81DE5ED2198AF0700D7FCB0 /* ImageCollectionViewCell.m */; };
+		B81DE5FA2198AF0700D7FCB0 /* ImageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B81DE5EE2198AF0700D7FCB0 /* ImageCollectionView.m */; };
 		B8526F6921946E8D00872848 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8526F6821946E8D00872848 /* AppDelegate.m */; };
 		B8526F6F21946E8D00872848 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8526F6D21946E8D00872848 /* Main.storyboard */; };
 		B8526F7121946E8F00872848 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8526F7021946E8F00872848 /* Assets.xcassets */; };
@@ -33,18 +45,6 @@
 		B8ABB988219684750059F8D0 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8ABB987219684750059F8D0 /* CoreFoundation.framework */; };
 		B8ABB98C219684F30059F8D0 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ABB98B219684F30059F8D0 /* Util.m */; };
 		B8D186E42196DAD400281435 /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D186E32196DAD400281435 /* ProfileTableViewCell.m */; };
-		B8D1870421981EA500281435 /* BaseContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D1870221981EA400281435 /* BaseContentTableViewCell.m */; };
-		B8D1870721981EBE00281435 /* ImgTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D1870621981EBE00281435 /* ImgTableViewCell.m */; };
-		B8D1870A21981EF000281435 /* TextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D1870921981EF000281435 /* TextTableViewCell.m */; };
-		B8D1870D21981F1F00281435 /* TextImgTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D1870C21981F1F00281435 /* TextImgTableViewCell.m */; };
-		B8D1871021981F5300281435 /* ImgCommTableCiewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D1870F21981F5300281435 /* ImgCommTableCiewCell.m */; };
-		B8D1871321981F6500281435 /* TextCommTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D1871221981F6500281435 /* TextCommTableViewCell.m */; };
-		B8D1871621981F8700281435 /* AllTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D1871521981F8700281435 /* AllTableViewCell.m */; };
-		B8D187192198202400281435 /* TableViewCellFacotry.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D187182198202400281435 /* TableViewCellFacotry.m */; };
-		B8D1871C21982AC200281435 /* ImageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D1871B21982AC200281435 /* ImageCollectionView.m */; };
-		B8D1872121985D0B00281435 /* CommentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D1871F21985D0B00281435 /* CommentsTableViewCell.m */; };
-		B8D1872221985D0B00281435 /* CommentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D1872021985D0B00281435 /* CommentsView.m */; };
-		B8D1872521985D3F00281435 /* ImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D1872321985D3E00281435 /* ImageCollectionViewCell.m */; };
 		B8D187282198648600281435 /* WeChatMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D187272198648600281435 /* WeChatMgr.m */; };
 		EA013748679DB3B3677A0F0A /* libPods-WechatMoment.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB713E5CAB415D447F6FB571 /* libPods-WechatMoment.a */; };
 /* End PBXBuildFile section */
@@ -83,6 +83,30 @@
 		B806979F2196B0F6000F99F7 /* BaseUIView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseUIView.m; sourceTree = "<group>"; };
 		B80697A12196B108000F99F7 /* BaseUIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseUIViewController.h; sourceTree = "<group>"; };
 		B80697A22196B108000F99F7 /* BaseUIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseUIViewController.m; sourceTree = "<group>"; };
+		B81DE5D62198AF0700D7FCB0 /* TextImgTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextImgTableViewCell.m; sourceTree = "<group>"; };
+		B81DE5D72198AF0700D7FCB0 /* TextCommTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCommTableViewCell.m; sourceTree = "<group>"; };
+		B81DE5D82198AF0700D7FCB0 /* ImgTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImgTableViewCell.h; sourceTree = "<group>"; };
+		B81DE5D92198AF0700D7FCB0 /* AllTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllTableViewCell.m; sourceTree = "<group>"; };
+		B81DE5DA2198AF0700D7FCB0 /* ImgCommTableCiewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImgCommTableCiewCell.h; sourceTree = "<group>"; };
+		B81DE5DB2198AF0700D7FCB0 /* TextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextTableViewCell.h; sourceTree = "<group>"; };
+		B81DE5DC2198AF0700D7FCB0 /* ImgTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImgTableViewCell.m; sourceTree = "<group>"; };
+		B81DE5DD2198AF0700D7FCB0 /* TextCommTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCommTableViewCell.h; sourceTree = "<group>"; };
+		B81DE5DE2198AF0700D7FCB0 /* TextImgTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextImgTableViewCell.h; sourceTree = "<group>"; };
+		B81DE5DF2198AF0700D7FCB0 /* AllTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllTableViewCell.h; sourceTree = "<group>"; };
+		B81DE5E02198AF0700D7FCB0 /* TextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextTableViewCell.m; sourceTree = "<group>"; };
+		B81DE5E12198AF0700D7FCB0 /* ImgCommTableCiewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImgCommTableCiewCell.m; sourceTree = "<group>"; };
+		B81DE5E22198AF0700D7FCB0 /* TableViewCellFacotry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellFacotry.h; sourceTree = "<group>"; };
+		B81DE5E32198AF0700D7FCB0 /* TableViewCellFacotry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellFacotry.m; sourceTree = "<group>"; };
+		B81DE5E52198AF0700D7FCB0 /* BaseContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseContentTableViewCell.m; sourceTree = "<group>"; };
+		B81DE5E62198AF0700D7FCB0 /* CommentsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsView.m; sourceTree = "<group>"; };
+		B81DE5E72198AF0700D7FCB0 /* CommentsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsTableViewCell.m; sourceTree = "<group>"; };
+		B81DE5E82198AF0700D7FCB0 /* ImageCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollectionView.h; sourceTree = "<group>"; };
+		B81DE5E92198AF0700D7FCB0 /* ImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollectionViewCell.h; sourceTree = "<group>"; };
+		B81DE5EA2198AF0700D7FCB0 /* BaseContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseContentTableViewCell.h; sourceTree = "<group>"; };
+		B81DE5EB2198AF0700D7FCB0 /* CommentsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsView.h; sourceTree = "<group>"; };
+		B81DE5EC2198AF0700D7FCB0 /* CommentsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsTableViewCell.h; sourceTree = "<group>"; };
+		B81DE5ED2198AF0700D7FCB0 /* ImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionViewCell.m; sourceTree = "<group>"; };
+		B81DE5EE2198AF0700D7FCB0 /* ImageCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionView.m; sourceTree = "<group>"; };
 		B8526F6421946E8D00872848 /* WechatMoment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WechatMoment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8526F6721946E8D00872848 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B8526F6821946E8D00872848 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -119,30 +143,6 @@
 		B8ABB98B219684F30059F8D0 /* Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		B8D186E22196DAD400281435 /* ProfileTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewCell.h; sourceTree = "<group>"; };
 		B8D186E32196DAD400281435 /* ProfileTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewCell.m; sourceTree = "<group>"; };
-		B8D1870221981EA400281435 /* BaseContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseContentTableViewCell.m; sourceTree = "<group>"; };
-		B8D1870321981EA400281435 /* BaseContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseContentTableViewCell.h; sourceTree = "<group>"; };
-		B8D1870521981EBE00281435 /* ImgTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImgTableViewCell.h; sourceTree = "<group>"; };
-		B8D1870621981EBE00281435 /* ImgTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImgTableViewCell.m; sourceTree = "<group>"; };
-		B8D1870821981EF000281435 /* TextTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextTableViewCell.h; sourceTree = "<group>"; };
-		B8D1870921981EF000281435 /* TextTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextTableViewCell.m; sourceTree = "<group>"; };
-		B8D1870B21981F1F00281435 /* TextImgTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextImgTableViewCell.h; sourceTree = "<group>"; };
-		B8D1870C21981F1F00281435 /* TextImgTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextImgTableViewCell.m; sourceTree = "<group>"; };
-		B8D1870E21981F5300281435 /* ImgCommTableCiewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImgCommTableCiewCell.h; sourceTree = "<group>"; };
-		B8D1870F21981F5300281435 /* ImgCommTableCiewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImgCommTableCiewCell.m; sourceTree = "<group>"; };
-		B8D1871121981F6500281435 /* TextCommTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextCommTableViewCell.h; sourceTree = "<group>"; };
-		B8D1871221981F6500281435 /* TextCommTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextCommTableViewCell.m; sourceTree = "<group>"; };
-		B8D1871421981F8700281435 /* AllTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllTableViewCell.h; sourceTree = "<group>"; };
-		B8D1871521981F8700281435 /* AllTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AllTableViewCell.m; sourceTree = "<group>"; };
-		B8D187172198202400281435 /* TableViewCellFacotry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCellFacotry.h; sourceTree = "<group>"; };
-		B8D187182198202400281435 /* TableViewCellFacotry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCellFacotry.m; sourceTree = "<group>"; };
-		B8D1871A21982AC200281435 /* ImageCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCollectionView.h; sourceTree = "<group>"; };
-		B8D1871B21982AC200281435 /* ImageCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionView.m; sourceTree = "<group>"; };
-		B8D1871D21985D0A00281435 /* CommentsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsTableViewCell.h; sourceTree = "<group>"; };
-		B8D1871E21985D0A00281435 /* CommentsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsView.h; sourceTree = "<group>"; };
-		B8D1871F21985D0B00281435 /* CommentsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsTableViewCell.m; sourceTree = "<group>"; };
-		B8D1872021985D0B00281435 /* CommentsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsView.m; sourceTree = "<group>"; };
-		B8D1872321985D3E00281435 /* ImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionViewCell.m; sourceTree = "<group>"; };
-		B8D1872421985D3E00281435 /* ImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollectionViewCell.h; sourceTree = "<group>"; };
 		B8D187262198648600281435 /* WeChatMgr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeChatMgr.h; sourceTree = "<group>"; };
 		B8D187272198648600281435 /* WeChatMgr.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeChatMgr.m; sourceTree = "<group>"; };
 		FB713E5CAB415D447F6FB571 /* libPods-WechatMoment.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WechatMoment.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +196,53 @@
 				B80697A22196B108000F99F7 /* BaseUIViewController.m */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		B81DE5D42198AF0700D7FCB0 /* tweetcell */ = {
+			isa = PBXGroup;
+			children = (
+				B81DE5D52198AF0700D7FCB0 /* impl */,
+				B81DE5E22198AF0700D7FCB0 /* TableViewCellFacotry.h */,
+				B81DE5E32198AF0700D7FCB0 /* TableViewCellFacotry.m */,
+				B81DE5E42198AF0700D7FCB0 /* base */,
+			);
+			path = tweetcell;
+			sourceTree = "<group>";
+		};
+		B81DE5D52198AF0700D7FCB0 /* impl */ = {
+			isa = PBXGroup;
+			children = (
+				B81DE5D62198AF0700D7FCB0 /* TextImgTableViewCell.m */,
+				B81DE5D72198AF0700D7FCB0 /* TextCommTableViewCell.m */,
+				B81DE5D82198AF0700D7FCB0 /* ImgTableViewCell.h */,
+				B81DE5D92198AF0700D7FCB0 /* AllTableViewCell.m */,
+				B81DE5DA2198AF0700D7FCB0 /* ImgCommTableCiewCell.h */,
+				B81DE5DB2198AF0700D7FCB0 /* TextTableViewCell.h */,
+				B81DE5DC2198AF0700D7FCB0 /* ImgTableViewCell.m */,
+				B81DE5DD2198AF0700D7FCB0 /* TextCommTableViewCell.h */,
+				B81DE5DE2198AF0700D7FCB0 /* TextImgTableViewCell.h */,
+				B81DE5DF2198AF0700D7FCB0 /* AllTableViewCell.h */,
+				B81DE5E02198AF0700D7FCB0 /* TextTableViewCell.m */,
+				B81DE5E12198AF0700D7FCB0 /* ImgCommTableCiewCell.m */,
+			);
+			path = impl;
+			sourceTree = "<group>";
+		};
+		B81DE5E42198AF0700D7FCB0 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				B81DE5E52198AF0700D7FCB0 /* BaseContentTableViewCell.m */,
+				B81DE5E62198AF0700D7FCB0 /* CommentsView.m */,
+				B81DE5E72198AF0700D7FCB0 /* CommentsTableViewCell.m */,
+				B81DE5E82198AF0700D7FCB0 /* ImageCollectionView.h */,
+				B81DE5E92198AF0700D7FCB0 /* ImageCollectionViewCell.h */,
+				B81DE5EA2198AF0700D7FCB0 /* BaseContentTableViewCell.h */,
+				B81DE5EB2198AF0700D7FCB0 /* CommentsView.h */,
+				B81DE5EC2198AF0700D7FCB0 /* CommentsTableViewCell.h */,
+				B81DE5ED2198AF0700D7FCB0 /* ImageCollectionViewCell.m */,
+				B81DE5EE2198AF0700D7FCB0 /* ImageCollectionView.m */,
+			);
+			path = base;
 			sourceTree = "<group>";
 		};
 		B8526F5B21946E8D00872848 = {
@@ -260,7 +307,7 @@
 		B8526F99219476C200872848 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				B8D1870121981EA400281435 /* tweetcell */,
+				B81DE5D42198AF0700D7FCB0 /* tweetcell */,
 				B806978B2196AE22000F99F7 /* WechatMomentView.h */,
 				B806978C2196AE22000F99F7 /* WechatMomentView.m */,
 				B8D186E22196DAD400281435 /* ProfileTableViewCell.h */,
@@ -342,37 +389,6 @@
 				FB713E5CAB415D447F6FB571 /* libPods-WechatMoment.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B8D1870121981EA400281435 /* tweetcell */ = {
-			isa = PBXGroup;
-			children = (
-				B8D1872421985D3E00281435 /* ImageCollectionViewCell.h */,
-				B8D1872321985D3E00281435 /* ImageCollectionViewCell.m */,
-				B8D1871D21985D0A00281435 /* CommentsTableViewCell.h */,
-				B8D1871F21985D0B00281435 /* CommentsTableViewCell.m */,
-				B8D1871E21985D0A00281435 /* CommentsView.h */,
-				B8D1872021985D0B00281435 /* CommentsView.m */,
-				B8D1870221981EA400281435 /* BaseContentTableViewCell.m */,
-				B8D1870321981EA400281435 /* BaseContentTableViewCell.h */,
-				B8D1870521981EBE00281435 /* ImgTableViewCell.h */,
-				B8D1870621981EBE00281435 /* ImgTableViewCell.m */,
-				B8D1870821981EF000281435 /* TextTableViewCell.h */,
-				B8D1870921981EF000281435 /* TextTableViewCell.m */,
-				B8D1870B21981F1F00281435 /* TextImgTableViewCell.h */,
-				B8D1870C21981F1F00281435 /* TextImgTableViewCell.m */,
-				B8D1870E21981F5300281435 /* ImgCommTableCiewCell.h */,
-				B8D1870F21981F5300281435 /* ImgCommTableCiewCell.m */,
-				B8D1871121981F6500281435 /* TextCommTableViewCell.h */,
-				B8D1871221981F6500281435 /* TextCommTableViewCell.m */,
-				B8D1871421981F8700281435 /* AllTableViewCell.h */,
-				B8D1871521981F8700281435 /* AllTableViewCell.m */,
-				B8D187172198202400281435 /* TableViewCellFacotry.h */,
-				B8D187182198202400281435 /* TableViewCellFacotry.m */,
-				B8D1871A21982AC200281435 /* ImageCollectionView.h */,
-				B8D1871B21982AC200281435 /* ImageCollectionView.m */,
-			);
-			path = tweetcell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -554,36 +570,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8D1870D21981F1F00281435 /* TextImgTableViewCell.m in Sources */,
 				B806978D2196AE22000F99F7 /* WechatMomentView.m in Sources */,
-				B8D1871021981F5300281435 /* ImgCommTableCiewCell.m in Sources */,
 				B8526F9E219476DF00872848 /* User.m in Sources */,
 				B80697902196AE7B000F99F7 /* NavigationController.m in Sources */,
+				B81DE5F82198AF0700D7FCB0 /* CommentsTableViewCell.m in Sources */,
 				B8526FB32194907900872848 /* ImageDownloader.m in Sources */,
-				B8D1870421981EA500281435 /* BaseContentTableViewCell.m in Sources */,
 				B8D187282198648600281435 /* WeChatMgr.m in Sources */,
 				B8526FA1219478CC00872848 /* TwContent.m in Sources */,
-				B8D1872121985D0B00281435 /* CommentsTableViewCell.m in Sources */,
-				B8D1870A21981EF000281435 /* TextTableViewCell.m in Sources */,
+				B81DE5F62198AF0700D7FCB0 /* BaseContentTableViewCell.m in Sources */,
 				B80697A32196B108000F99F7 /* BaseUIViewController.m in Sources */,
-				B8D187192198202400281435 /* TableViewCellFacotry.m in Sources */,
-				B8D1871321981F6500281435 /* TextCommTableViewCell.m in Sources */,
+				B81DE5F22198AF0700D7FCB0 /* ImgTableViewCell.m in Sources */,
 				B8069783219688F4000F99F7 /* RequestUtil.m in Sources */,
 				B8ABB9812195C9130059F8D0 /* UIImageView+ImageCache.m in Sources */,
-				B8D1872221985D0B00281435 /* CommentsView.m in Sources */,
 				B8526F7721946E8F00872848 /* main.m in Sources */,
 				B8526FAD21948D6A00872848 /* ImageMgr.m in Sources */,
 				B80697932196AEDA000F99F7 /* WechatMomentViewController.m in Sources */,
-				B8D1870721981EBE00281435 /* ImgTableViewCell.m in Sources */,
 				B8D186E42196DAD400281435 /* ProfileTableViewCell.m in Sources */,
-				B8D1871621981F8700281435 /* AllTableViewCell.m in Sources */,
+				B81DE5FA2198AF0700D7FCB0 /* ImageCollectionView.m in Sources */,
 				B8ABB9862195E0EC0059F8D0 /* NSString+Extension.m in Sources */,
-				B8D1871C21982AC200281435 /* ImageCollectionView.m in Sources */,
+				B81DE5F12198AF0700D7FCB0 /* AllTableViewCell.m in Sources */,
 				B80697A02196B0F6000F99F7 /* BaseUIView.m in Sources */,
 				B8526FB021948E9600872848 /* ImageCache.m in Sources */,
+				B81DE5F42198AF0700D7FCB0 /* ImgCommTableCiewCell.m in Sources */,
+				B81DE5F52198AF0700D7FCB0 /* TableViewCellFacotry.m in Sources */,
 				B8526F6921946E8D00872848 /* AppDelegate.m in Sources */,
-				B8D1872521985D3F00281435 /* ImageCollectionViewCell.m in Sources */,
+				B81DE5F72198AF0700D7FCB0 /* CommentsView.m in Sources */,
+				B81DE5EF2198AF0700D7FCB0 /* TextImgTableViewCell.m in Sources */,
+				B81DE5F02198AF0700D7FCB0 /* TextCommTableViewCell.m in Sources */,
+				B81DE5F32198AF0700D7FCB0 /* TextTableViewCell.m in Sources */,
 				B8ABB98C219684F30059F8D0 /* Util.m in Sources */,
+				B81DE5F92198AF0700D7FCB0 /* ImageCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,42 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - Masonry (1.1.0)
+  - MJRefresh (3.1.15.7)
+  - "UITableView+FDTemplateLayoutCell (1.6)"
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.2.1)
+  - Masonry (~> 1.1.0)
+  - MJRefresh (~> 3.1.15.7)
+  - "UITableView+FDTemplateLayoutCell (~> 1.6)"
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - Masonry
+    - MJRefresh
+    - "UITableView+FDTemplateLayoutCell"
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
+
+PODFILE CHECKSUM: 91c8fd0342763c5b73a2dfd48c0fc3c5973e0902
+
+COCOAPODS: 1.5.3

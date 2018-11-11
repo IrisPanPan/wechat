@@ -58,9 +58,11 @@
     [self.weChatMgr downLoadUserInfoCallback:^(id  _Nonnull result) {
         NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
         [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+       
     }];
   
     [self.weChatMgr downloadTweetsListCallback:^(id  _Nonnull result) {
+      [self addRefreshHeaderFooter];
       [self.tableView reloadData];
     }];
    
@@ -114,8 +116,7 @@
     [_tableView registerClass:[TextCommTableViewCell class] forCellReuseIdentifier:@"TextCommTableViewCell"];
     [_tableView registerClass:[AllTableViewCell class] forCellReuseIdentifier:@"AllTableViewCell"];
     
-    [self addRefreshHeaderFooter];
-    
+   
     //mjrefresh 位置
     if (@available(iOS 11.0, *)) {
 #ifdef __IPHONE_11_0
